@@ -55,7 +55,6 @@ module Fetch_TB();
 
         #5 reset_tb = 0;
 
-        // Simula algunos ciclos de reloj
         repeat (10) begin
             #5 clk_tb = ~clk_tb;
             #5 clk_tb = ~clk_tb;
