@@ -33,11 +33,11 @@ BR inst_BR(
     .adrsReadA(instruccion[25:21]), 
     .adrsReadB(instruccion[20:16]), 
     .adrsWrite(instruccion[15:11]), 
-    .RegEn(out_control[8]), // RegWrite
-    .write(jal ? PC_plus_4 : r1), // Para JAL, escribimos PC+4
+    .RegEn(out_control[8]), 
+    .write(jal ? PC_plus_4 : r1), 
     .readA(r2), 
     .readB(r3),
-    .jal(out_control[0]) // JAL
+    .jal(out_control[0]) 
 );
 
 
@@ -51,7 +51,7 @@ DataMem inst_memoria(
 
 ALU inst_ALU(
     .A(r2), 
-    .B(out_control[3] ? imm_ext : r3), // Mux para ALUSrc
+    .B(out_control[3] ? imm_ext : r3), 
     .Sel(r4), 
     .R(r5)
 );
