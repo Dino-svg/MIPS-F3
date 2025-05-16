@@ -107,7 +107,7 @@ BR reg_bank(
     .clk(clk),
     .adrsReadA(rs),
     .adrsReadB(rt),
-    .adrsWrite(rd_MEMWB),  // Ahora rd_MEMWB está declarado arriba
+    .adrsWrite(rd_MEMWB),  
     .RegEn(BR_write),
     .write(BR_in),
     .readA(readA),
@@ -154,7 +154,7 @@ ALU_control alu_control_unit(
 
 assign muxB_to_alu = (control_IDEX[2] == 1'b1) ? SE_IDEX : RD2_IDEX;
 
-assign rd_final = control_IDEX[7] ? 5'd31 : (control_IDEX[6] ? rd_IDEX : rt_IDEX); // Jal ? $ra : (RegDst ? rd : rt)
+assign rd_final = control_IDEX[7] ? 5'd31 : (control_IDEX[6] ? rd_IDEX : rt_IDEX); 
 
 // Unidad ALU
 ALU alu(
